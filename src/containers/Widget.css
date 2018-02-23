@@ -1,0 +1,112 @@
+.custom-vertical-timeline-component {
+  margin-top: 0;
+}
+
+.custom-vertical-timeline-component:before {
+  right: 18px;
+  left: auto;
+  background-color: #ccc;
+}
+
+.vertical-timeline:before {
+  top: 35px;
+  bottom: 40px;
+  height: auto;
+}
+
+.vertical-timeline-element--work {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-icon {
+  right: 0;
+  left: auto;
+  box-shadow: none;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-icon svg {
+  fill: #ffffff;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-content {
+  margin-left: 0;
+  margin-right: 100px;
+  box-shadow: none;
+  padding-top: 8px;
+}
+
+.vertical-timeline-element--work:first-child .vertical-timeline-element-content {
+  margin-top: 2px;
+  margin-right: 35px;
+  padding: 0;
+
+  text-align: right;
+  font-size: 0.7rem;
+  color: #ccc;
+}
+
+.vertical-timeline-element--work:last-child .vertical-timeline-element-content {
+  margin-top: 2px;
+  margin-right: 35px;
+  padding: 0;
+
+  text-align: right;
+  font-size: 0.7rem;
+  color: #ccc;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-content:before {
+  position: absolute;
+  left: auto;
+  right: -9px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-content:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  border-top: 2px solid #ccc;
+  width: 54px;
+  right: -60px;
+}
+
+.vertical-timeline-element--work:first-child .vertical-timeline-element-content:before {
+  display: none;
+}
+
+.vertical-timeline-element--work:first-child .vertical-timeline-element-content:after {
+  display: none;
+}
+
+.vertical-timeline-element--work:last-child .vertical-timeline-element-content:before {
+  display: none;
+}
+
+.vertical-timeline-element--work:last-child .vertical-timeline-element-content:after {
+  display: none;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline-element--work {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .vertical-timeline-element--work .vertical-timeline-element-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vertical-timeline-element.vertical-timeline-element--work:nth-child(n+1) .vertical-timeline-element-content:before {
+    position: absolute;
+    left: auto;
+    right: -9px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    top: 16px;
+  }
+
+}

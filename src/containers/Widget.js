@@ -5,8 +5,10 @@ import styled      from 'styled-components';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 import FilmCard from '../components/FilmCard';
+import Icon from '../components/Icon';
 
 import 'react-vertical-timeline-component/style.min.css';
+import './Widget.css';
 
 const StyledDiv = styled.div`
   position: fixed;
@@ -21,10 +23,8 @@ const StyledDiv = styled.div`
   padding: 1.5rem;
 
   overflow-x: auto;
-  background-color: #eee;
-  box-shadow: -5px 0px 10px 1px #eee;
+  background-color: #fff;
 `;
-
 
 class Widget extends React.PureComponent {
   static propTypes = {
@@ -41,7 +41,7 @@ class Widget extends React.PureComponent {
           subGenre: PropTypes.string.isRequired,
           producer: PropTypes.string.isRequired,
         }
-      ).isRequired
+      ).isRequired,
     ).isRequired,
   };
 
@@ -53,14 +53,14 @@ class Widget extends React.PureComponent {
 
     return (
       <StyledDiv>
-        <VerticalTimeline
+        <VerticalTimeline className="custom-vertical-timeline-component"
         >
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+            iconStyle={{ background: '#ccc', height: '15px', width: '15px', right: '12px' }}
             position={position}
           >
-            today
+            Today
           </VerticalTimelineElement>
 
           {
@@ -70,8 +70,9 @@ class Widget extends React.PureComponent {
                 <VerticalTimelineElement
                   key={movie.id}
                   className="vertical-timeline-element--work"
-                  iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                  iconStyle={{ background: movie.iconColor }}
                   position={position}
+                  icon={<Icon subGenre={movie.subGenre} />}
                 >
                   <FilmCard
                     movie={movie}
@@ -82,10 +83,10 @@ class Widget extends React.PureComponent {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+            iconStyle={{ background: '#ccc', height: '15px', width: '15px', right: '12px' }}
             position={position}
           >
-            12/12/12
+            12/01/12
           </VerticalTimelineElement>
         </VerticalTimeline>
       </StyledDiv>
